@@ -30,9 +30,10 @@ import javax.swing.Timer;
 
 
 /**
- * @see http://stackoverflow.com/q/3066590/230513
- * 15-Mar-2011 r8 http://stackoverflow.com/questions/5274962
- * 26-Mar-2013 r17 per comment
+ * readingProject is created by shackman2006.
+ * 
+ * 
+ * Great starter Swing tutorial: http://stackoverflow.com/q/3066590/230513
  */
 public class ReadingProject implements Runnable {
 
@@ -129,9 +130,6 @@ public class ReadingProject implements Runnable {
 				for (String s : lines) {
 					myQueue.add(s);
 				}
-				//System.out.println(line);
-				//label2.setText(line);
-				//System.out.println("Waiting 1 second");
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -139,37 +137,11 @@ public class ReadingProject implements Runnable {
 		}
 		
 		//Timer Stuff
-        /*Timer timer = new Timer(175, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            	if(!myQueue.isEmpty() && !waiting) {
-            		String s = myQueue.remove();
-                    label2.setText(s);
-                    
-                	//System.out.println("Tick tock!");
-                    //repaint();
-            	} else {
-            		//label2.setText("END");
-            	}
-                
-            }
-        });*/
 		timer = new Timer(175, tmpListener);
         timer.setRepeats(true);
         timer.setCoalesce(true);
         timer.start();
 		
-		/*Timer timer = new Timer(150, null);
-		timer.setRepeats(false);
-		timer.setCoalesce(true);
-		for(String s : myQueue) {
-			label2.setText(s);
-			System.out.println("Delay:" + timer.getDelay());
-			timer.setDelay(100*s.length());
-			timer.start();
-		}*/
-		
-        
         //End Timer STuff
     }
     ActionListener tmpListener = new ActionListener() {
@@ -185,7 +157,7 @@ public class ReadingProject implements Runnable {
                 //System.out.println(timer.getDelay()+":"+s);
 
         	} else {
-        		label2.setText("Text Complete");
+        		//label2.setText("Text Complete");
         	}
 		}
 	
