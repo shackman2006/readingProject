@@ -1,0 +1,1 @@
+This is an example article to test the functionality of my project. The objective is to see how well the program loads and streams this text.
